@@ -5,7 +5,7 @@
 struct node
 {
     int data;
-    struct node* link;
+    struct node* next;
 };
 struct node* head = NULL;
 
@@ -13,7 +13,7 @@ void insert(int x)
 {
     struct node* temp = (struct node*) malloc(sizeof(struct node));
     temp -> data = x;
-    temp -> link = head;
+    temp -> next = head;
     head = temp;
 }
 
@@ -57,6 +57,6 @@ int main ()
     scanf("%d", &pos);
     Delete(pos);
     printData();
-
+    
     return 0;
 }
