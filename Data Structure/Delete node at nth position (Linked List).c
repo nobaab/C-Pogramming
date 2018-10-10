@@ -40,7 +40,7 @@ void printData()
     struct node* temp = head;
     while(temp != NULL){
         print(temp -> data);
-        temp = temp -> link;
+        temp = temp -> next;
     }
     printf("\n");
 }
