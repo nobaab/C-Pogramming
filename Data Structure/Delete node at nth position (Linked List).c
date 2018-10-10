@@ -18,16 +18,21 @@ void insert(int x)
 }
 
 void Delete(int pos){
-    struct node* temp = head;
-    int i;
-    for(i = 0; i < pos - 2; i++){
-        temp = temp -> link;
+    if(pos == 0){                                // if index start from 0 then pos == 0
+        struct node* del = head;
+        head  = head -> next;
+        free(del);
     }
-    struct node* temp1 = temp -> link;
-    temp -> link = temp1 -> link;
-    free(temp1);
-
-
+    else {
+        struct node* temp = head;
+        int i;
+        for(i = 0; i < pos - 1; i++){            // and then i < pos - 1
+            temp = temp -> next;
+        }
+        struct node* del = temp -> next;
+        temp -> next  = del -> next;
+        free(del);
+    }
 }
 
 void printData()
