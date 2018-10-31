@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define print(a) printf("%d ", a);
+
 struct node {
     int data;
     struct node* next;
@@ -27,7 +27,7 @@ void printdata ()
 {
     struct node* temp=head;
     while (temp!=NULL) {
-        print(temp -> data);
+        printf("%d",temp -> data);
         temp= temp -> next;
     }
     printf("\n");
